@@ -11,6 +11,7 @@ steps:
 
   - name: "Publish to ECR"
     command: 
+      - "docker build -t buildkiteexample ."
       - "docker tag buildkiteexample:latest 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkiteexample:latest"
       - "docker push 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkiteexample:latest"
     plugins:
