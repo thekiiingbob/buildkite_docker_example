@@ -9,11 +9,11 @@ steps:
 
   - wait
 
-  - name: "Publish to ECR"
-    command: 
-      - "docker build -t buildkite-example ."
-      - "docker tag buildkite-example:latest 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkite-example:latest"
-      - "docker push 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkite-example:latest"
-    plugins:
-      ecr#v1.1.4:
-        login: true
+  # - name: "Publish to ECR"
+  #   command: 
+  #     - "docker build -t buildkite-example ."
+  #     - "docker tag buildkite-example:latest 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkite-example:latest"
+  #     - "docker push 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkite-example:latest"
+  #   plugins:
+  #     ecr#v1.1.4:
+  #       login: true
