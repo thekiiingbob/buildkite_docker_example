@@ -6,8 +6,3 @@ steps:
 
   - name: ":selenium: Test"
     command: "docker-compose run app npm test"
-
-  - wait
-
-  - name: ":npm: Build and Publish"
-    command: "docker-compose run app .buildkite/scripts/publish.sh"
