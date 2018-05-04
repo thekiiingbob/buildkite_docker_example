@@ -6,3 +6,12 @@ steps:
 
   - name: ":selenium: Test"
     command: "docker-compose run app npm test"
+
+  - wait
+
+  - name: "Publish to ECR"
+    command: "docker tag buildkiteexample:latest 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkiteexample:latest"
+    command: "docker push 327089805594.dkr.ecr.us-east-2.amazonaws.com/buildkiteexample:latest"
+    plugins:
+      ecr#v1.1.4:
+        login: true
